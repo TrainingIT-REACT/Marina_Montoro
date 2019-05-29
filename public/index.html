@@ -33,9 +33,34 @@
     -->
     <title>React App</title>
   </head>
+  <style>
+    #updateApplication {
+      background-color: rgba(0, 0, 0, .7);
+      bottom: 2em;
+      box-shadow: 0px 6px 10px -5px rgba(0, 0, 0, .5);
+      border-radius: 5px;
+      color: white;
+      display: none;
+      font-size: .9em;
+      left: 2em;
+      position: absolute;
+      padding: 1em;
+    }
+    #updateApplication.show {
+      display: block;
+    }
+    #reload {
+      margin: 0 0 0 1em;
+    }
+  </style>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <div id="updateApplication">
+      Hay una nueva versión de esta aplicación
+      <button id="reload" class="button-primary">Recargar</button>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

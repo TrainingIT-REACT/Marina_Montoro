@@ -1,16 +1,12 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-//const WorkboxPlugin = require('workbox-webpack-plugin');
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports =  {
-  entry: {
-    main: './src/index.js',
-    sw: './src/sw.js'
-  },
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].js'
+    filename: '[name].[chunkhash:8].js'
   },
   module: {
     rules: [
@@ -40,9 +36,9 @@ module.exports =  {
       template: './public/index.html',
       filename: './index.html',
     }),
-    // new WorkboxPlugin.InjectManifest({
-    //   swSrc: './public/manifest.json'
-    // })
+    new WorkboxPlugin.InjectManifest({
+      swSrc: './src/sw.js'
+    })
   ],
   devServer: {
     contentBase: './build',

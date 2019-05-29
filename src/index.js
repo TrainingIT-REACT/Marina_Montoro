@@ -23,6 +23,14 @@ document.getElementById('root'));
 // Learn more about service workers: http://bit.ly/CRA-PWA
 //serviceWorker.unregister();
 // Instalamos el service worker
+
+let worker;
+let refreshing = false;
+
+document.getElementById('reload').addEventListener('click', () => {
+  worker.postMessage({action: 'skipWaiting'});
+})
+
 // Comprobamos que el navegador lo soporte:
 if ('serviceWorker' in navigator) {
   // Esperamos a que cargue la web
@@ -30,10 +38,28 @@ if ('serviceWorker' in navigator) {
   // Intentamos instalar el Service worker
   navigator.serviceWorker.register('/sw.js').then((registration) => {
   // Se ha registrado correctamente
-  console.log('El service worker SW se ha registrado correctamente:', registration.scope);
-  }, (err) => {
-  // registration failed :(
-  console.log('El registro de SW ha fallado :(', err);
-  });
+    console.log('El service worker SW se ha registrado correctamente:', registration.scope);
+
+    registration.addEventListener('updatefound', () => {
+      worker = registration.installing;
+
+      worker.addEventListener('statechange', () => {
+          if(worker.state === 'installed') {
+            const updateApp = document.getElementById('updateApplication');
+            updateApp.classList.add('show');
+          }
+      });
+    });
+    }, (err) => {
+    // registration failed :(
+    console.log('El registro de SW ha fallado :(', err);
+    });
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if(!refreshing) {
+        window.location.reload();
+        refreshing = true;
+      }
+    });
   });
  }
