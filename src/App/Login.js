@@ -41,21 +41,19 @@ class Login extends React.Component {
       {({ signedIn, updateUser }) => {
         return <div>
           { signedIn ? (
-            <p>
               <PrivateRoute component={Admin}/>
-            </p>
           ) : (
             <>
                <Form>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                   <Form.Label >User name</Form.Label>
                   <Form.Control id="userName" type="text" placeholder="Enter user" value={this.state.value} onChange={this.onChange} maxLength="13"/>
                 </Form.Group>
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group>
                   <Form.Label id="userPass">Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
+                <Form.Group>
                   <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" onClick={() => {updateUser(true); this.handleClick()}}>

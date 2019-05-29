@@ -29,7 +29,7 @@ import {  addRecently, playSong } from '../actions/favorites';
                       {this.props.favorites.songs.map(fav => 
                       <div key={fav.id} className='listaRepro'> 
                                <FaPlay className='iconPlay'
-                               style={this.state.rep.name === fav.name ? {color:'#496D90'} : {color:'white'}} 
+                               style={this.state.rep.name === fav.name ? {color:'green'} : {color:'white'}} 
                                onClick={()=> this.handlePlay(fav)} 
                              /> 
                         <div onClick={()=> this.handlePlay(fav)} >

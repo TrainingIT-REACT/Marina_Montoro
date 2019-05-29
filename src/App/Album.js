@@ -22,13 +22,13 @@ const Album = (props) => {
       <Row>
         <Col sm={4} className="albumList">
           <div>{props.album.name} {props.album.artist}</div>
-          <div><img src={props.album.cover} height="200" width="200"/></div>
+          <div><img className="albumSel" src={props.album.cover} height="200" width="200"/></div>
         </Col>
         <Col sm={8} className="albumRepo"> 
           {list.map(song => 
             <div key={song.id} className='listaRepro'> 
               <FaPlay className='iconPlay'
-                style={props.favorites.playSong.name === song.name ? {color:'#496D90'} : {color:'white'}} 
+                style={props.favorites.playSong.name === song.name ? {color:'green'} : {color:'white'}} 
                 onClick={()=> handlePlay(song,props.addRecently, props.playSong)} 
               /> 
             <div onClick={()=> handlePlay(song,props.addRecently, props.playSong)} >

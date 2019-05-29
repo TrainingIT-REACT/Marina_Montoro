@@ -48,7 +48,7 @@ import { addFavorites, deleteFavorites, addRecently, playSong } from '../actions
                       /> 
                       </div>
                       <FaPlay  className='iconPlay'
-                        style={this.state.rep.name === song.name ? {color:'#496D90'} : {color:'white'}} 
+                        style={this.state.rep.name === song.name ? {color:'green'} : {color:'white'}} 
                         onClick={()=> this.handlePlay(song)} 
                       /> 
                     {song.name}

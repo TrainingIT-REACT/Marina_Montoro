@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { FaUser } from 'react-icons/fa';
 
 const Admin = ({name}) => {
-  return <div>
-    <h2 className="name">Hola! {name}</h2>
-    <p>
-    </p>
-  </div>;
+  return <div className="user"> <FaUser /> {name}</div>
+  
 }
 
 const mapStateToProps = (state) => {

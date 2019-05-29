@@ -34,8 +34,19 @@
 .iconHeart{
   margin-right: 10px;
 }
+
 .listaRepro{
   display: flex;
+  padding: 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.listaRepro:hover{
+  /* box-shadow: 0 0 2px 1px #283E60; */
+  background-color: #0f3d65;
+  background-image: linear-gradient(180deg, #283E60, #4e5f79);
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .albumRepo {
@@ -43,11 +54,12 @@
 }
 
 .login{
-  border: 1px solid white;
-  padding: 20px;
+  /* border: 1px solid #283E60; */
+  /* padding: 20px; */
   width: 300px;
-  position: absolute;
+  /* position: absolute; */
   color:white;
+  margin-top: -255px;
 }
 
 .links{
@@ -96,7 +108,10 @@ body, html {
 
 .enlaces{
   position: absolute;
-  margin-top: 300px;
+}
+
+.enlace {
+  padding-bottom: 20px;
 }
 
 
@@ -110,8 +125,16 @@ audio {
 
 .albums {
   padding: 10px;
+  
 }
-img:hover {
+.albums:hover{
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.albumSel:hover{
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   opacity: 0.5;
   cursor: pointer;
@@ -127,6 +150,13 @@ a{
 }
 a:hover{
   text-decoration: none;
+  color:#5196ff;
+}
+
+.user:hover {
+  text-decoration: none;
+  color: #5196ff;
+  cursor: pointer;
 }
 
 .rutas {
@@ -146,4 +176,5 @@ a:hover{
 
 .songsData{
   height: calc(100vh - 280px);
+  padding-top: 10px;
 }

@@ -95,7 +95,6 @@ class Home extends Component {
                 {this.state.albums.map((album) =>
                   <Carousel.Item key={album.id} >
                   <img
-                    
                     className="d-block w-100"
                     src={Logo}
                     height="200"
@@ -109,33 +108,32 @@ class Home extends Component {
               </Carousel>
             </div>
             <div className="songsData">
-              <div className="login">
-                <Route component={Login}/>
-              </div>
               <div >
               <Router>
                 <div className="enlaces">
                 <nav>
-                  <div>
+                  <div className="enlace">
                       <NavLink activeClassName="active" exact to="/favorites"><FaHeart /> Favorites</NavLink>
                   </div>
-                  <div>
+                  <div className="enlace">
                     <NavLink activeClassName="active" to="/recPlayed"><FaGitter/> Recently Played</NavLink>
                   </div>
-                  <div>
+                  <div className="enlace">
                     <NavLink activeClassName="active" to="/albums" onClick={this.handleClick.bind(this)}><FaRegDotCircle/> Albums</NavLink>
                   </div>
-                  <div>
+                  <div className="enlace">
                     <NavLink activeClassName="active" to="/songs"><FaMusic/> Songs</NavLink>
                   </div>
                 </nav>
                 </div>
                 <div className="rutas">
-                <Route path="/favorites" exact component={Favorites}/>
-                <Route path="/recPlayed" exact component={Recent}/>
-                 <Route path="/albums" component={Albums} /> 
-
-                <Route path="/songs" component={Songs}/>
+                  <Route path="/favorites" exact component={Favorites}/>
+                  <Route path="/recPlayed" exact component={Recent}/>
+                  <Route path="/albums" component={Albums} /> 
+                  <Route path="/songs" component={Songs}/>
+                </div>
+                <div className="login">
+                  <Route component={Login}/>
                 </div>
               </Router>
               </div>

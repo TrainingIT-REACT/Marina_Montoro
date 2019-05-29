@@ -23,6 +23,7 @@
     "client": "webpack-dev-server --open --mode=development",
     "build": "webpack --mode=production",
     "serve": "yarn build && serve -s build",
+    "test:integration": "jest -c integration/jest.config.js",
     "server": "json-server --watch server/data.json --static server/static --port 3000",
     "start": "npm-run-all --parallel client server"
   },
