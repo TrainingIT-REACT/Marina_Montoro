@@ -1,8 +1,149 @@
-.App {
-  margin: 3em auto;
-  max-width: 50em;
+
+.container {
+  min-width: 100%;
+  height: 94%;
 }
 
-.App h1 {
-  text-align: center;
+.content {
+  height: 720px;
+}
+
+.header{
+  background-color: #121A27;
+  padding: 0px;
+}
+
+.menu {
+  background-color: #121A27;
+  color:white;
+  padding-top: 30px;
+}
+
+.info {
+  color:white;
+  width: 100%;
+  height: calc(100vh - 310px);
+  overflow-y: auto;
+}
+
+.iconPlay{
+  margin-top:5px;
+  margin-right: 10px;
+}
+
+.iconHeart{
+  margin-right: 10px;
+}
+.listaRepro{
+  display: flex;
+}
+
+.albumRepo {
+  padding-top: 40px;
+}
+
+.login{
+  border: 1px solid white;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  color:white;
+}
+
+.links{
+  padding: 20px;
+}
+
+.contenido{
+  overflow: auto;
+  height: 670px;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #121A27;
+  background-image: linear-gradient(180deg, #121A27, #283E60);
+}
+
+.scroll {
+  overflow: auto;
+  margin: 0 10px;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.enlaces{
+  position: absolute;
+  margin-top: 300px;
+}
+
+
+.carousel {
+  padding-bottom: 20px;
+}
+
+audio {
+  filter: sepia(100%) saturate(140%) grayscale(0) contrast(200%) hue-rotate(46deg) invert(12%);
+}
+
+.albums {
+  padding: 10px;
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a{
+  color:white;
+}
+a:hover{
+  text-decoration: none;
+}
+
+.rutas {
+  margin-left: 310px;
+  color:white;
+  height: 430px;
+}
+
+.albumList{
+  padding-top: 20px;
+}
+
+.audio {
+  width: 100%;
+  height: 50px;
+}
+
+.songsData{
+  height: calc(100vh - 280px);
 }
