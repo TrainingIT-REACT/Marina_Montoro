@@ -54,10 +54,9 @@
 }
 
 .login{
-  /* border: 1px solid #283E60; */
-  /* padding: 20px; */
+  border: 8px solid #283E60;
+  padding: 20px;
   width: 300px;
-  /* position: absolute; */
   color:white;
   margin-top: -255px;
 }
@@ -151,6 +150,11 @@ a{
 a:hover{
   text-decoration: none;
   color:#5196ff;
+}
+
+.user {
+  margin-top: -250px;
+  color: white;
 }
 
 .user:hover {

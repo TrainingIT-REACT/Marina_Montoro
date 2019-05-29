@@ -43,7 +43,7 @@ class Login extends React.Component {
           { signedIn ? (
               <PrivateRoute component={Admin}/>
           ) : (
-            <>
+            <div className="login">
                <Form>
                 <Form.Group>
                   <Form.Label >User name</Form.Label>
@@ -60,7 +60,7 @@ class Login extends React.Component {
                   Login
                 </Button>
               </Form> 
-            </>
+            </div>
           )}
         </div>
       }}

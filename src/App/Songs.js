@@ -41,7 +41,7 @@ import { addFavorites, deleteFavorites, addRecently, playSong } from '../actions
                 
                    <div key={song.id} style={{heigth:'200px'}} className='listaRepro'>
                      <div className='iconHeart'>
-                      <FaHeart 
+                      <FaHeart
                         style={this.props.favorites && this.props.favorites.songs.find((f) =>f.id === song.id) ? {color:'red'} : {color:'white'}} 
                         className={song.name} 
                         onClick={()=> this.handleFavorite(song)} 

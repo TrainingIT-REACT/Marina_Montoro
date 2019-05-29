@@ -132,7 +132,7 @@ class Home extends Component {
                   <Route path="/albums" component={Albums} /> 
                   <Route path="/songs" component={Songs}/>
                 </div>
-                <div className="login">
+                <div >
                   <Route component={Login}/>
                 </div>
               </Router>
