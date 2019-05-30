@@ -42,7 +42,6 @@
 }
 
 .listaRepro:hover{
-  /* box-shadow: 0 0 2px 1px #283E60; */
   background-color: #0f3d65;
   background-image: linear-gradient(180deg, #283E60, #4e5f79);
   opacity: 0.5;

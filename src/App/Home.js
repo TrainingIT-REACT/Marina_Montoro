@@ -101,7 +101,7 @@ class Home extends Component {
                     alt="First slide"
                   />
                   <Carousel.Caption>
-                    <h3></h3>
+                    <h3>{album.name}</h3>
                   </Carousel.Caption>
                   </Carousel.Item>
                 )}
