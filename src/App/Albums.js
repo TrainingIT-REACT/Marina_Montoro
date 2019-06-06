@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Album from './Album';
-import { saveAlbums, saveSongs, albumSelected } from '../actions/data';
+import { albumSelected } from '../actions/data';
 
 class Albums extends React.PureComponent {
   constructor(props) {
@@ -20,16 +20,16 @@ class Albums extends React.PureComponent {
   }
 
   render () {
-    return !this.props.data.albumSelected  ? 
-    (
-      <Container className="info">
+    return !this.props.data.albumSelected 
+     ? (<Container className="info">
           {this.props.data.albums.map(album =>   
               <img className="albums" key={album.id} src={album.cover} height="200" width="200" onClick={()=>this.handleClick(album)}/>     
         )}
-      </Container>)
+      </Container>
+      )
      : (
      <Album album={this.state.album}></Album>
-     )
+      )
   }
 }
 

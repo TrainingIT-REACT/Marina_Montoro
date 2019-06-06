@@ -2,7 +2,8 @@ import types from '../actions/types';
 
 // Estado inicial
 const initialState = {
-  name: ""
+  name: "",
+  isLogged: false
 }
 
 // Implementamos el reducer
@@ -12,6 +13,11 @@ const reducer = (state = initialState, action) => {
       return {
         name: action.name
       };
+    case types.IS_LOGGED:
+        return {
+          ...state,
+          isLogged: action.isLogged
+        }
     default:
       return state;
   }

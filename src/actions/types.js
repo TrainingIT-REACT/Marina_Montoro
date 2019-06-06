@@ -8,7 +8,8 @@ const actions = [
     "SAVE_SONGS",
     "ALBUM_SELECTED",
     "ADD_RECENTLY",
-    "PLAY_SONG"
+    "PLAY_SONG",
+    "IS_LOGGED"
   ];
   
   // Las convertimos en un objeto

@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Logo from '../images/cover.jpg';
 import Carousel from 'react-bootstrap/Carousel'
 import { FaHeart } from 'react-icons/fa';
 import { FaGitter } from 'react-icons/fa';
 import { FaMusic } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { FaRegDotCircle } from 'react-icons/fa';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Login from './Login';
 import Albums from './Albums';
-import Album from './Album';
-
+import Profile from './Profile'
 import Songs from './Songs';
 import Favorites from './Favorites';
 import Recent from './Recent';
-
 import Reproductor from './Reproductor';
 import { saveAlbums, saveSongs, albumSelected } from '../actions/data';
 import PrivateRoute from './PrivateRoute';
-
 
 // Importamos los estilos
 import "./App.css";
@@ -83,7 +79,6 @@ class Home extends Component {
     const { index, direction } = this.state;
 
     return (
-      //<div>
         <Container className="container">
             <div>
               <Carousel
@@ -113,24 +108,29 @@ class Home extends Component {
                 <div className="enlaces">
                 <nav>
                   <div className="enlace">
-                      <NavLink activeClassName="active" exact to="/favorites"><FaHeart /> Favorites</NavLink>
-                  </div>
-                  <div className="enlace">
-                    <NavLink activeClassName="active" to="/recPlayed"><FaGitter/> Recently Played</NavLink>
-                  </div>
-                  <div className="enlace">
                     <NavLink activeClassName="active" to="/albums" onClick={this.handleClick.bind(this)}><FaRegDotCircle/> Albums</NavLink>
                   </div>
                   <div className="enlace">
                     <NavLink activeClassName="active" to="/songs"><FaMusic/> Songs</NavLink>
                   </div>
+                  <div className="enlace">
+                    <NavLink activeClassName="active" to="/recPlayed"><FaGitter/> Recently Played</NavLink>
+                  </div>
+                  <div className="enlace">
+                      <NavLink activeClassName="active" exact to="/favorites"><FaHeart /> Favorites</NavLink>
+                  </div>
+                  {this.props.user.isLogged && 
+                  <div className="enlace">
+                    <NavLink activeClassName="active" to="/profile"><FaUser/> {this.props.user.name}</NavLink>
+                  </div>}
                 </nav>
                 </div>
                 <div className="rutas">
-                  <Route path="/favorites" exact component={Favorites}/>
+                  <PrivateRoute path="/favorites" exact component={Favorites}/>
                   <Route path="/recPlayed" exact component={Recent}/>
                   <Route path="/albums" component={Albums} /> 
                   <Route path="/songs" component={Songs}/>
+                  <PrivateRoute path='/profile' component={Profile}/>
                 </div>
                 <div >
                   <Route component={Login}/>
@@ -142,7 +142,6 @@ class Home extends Component {
               <Reproductor></Reproductor>
             </div>
         </Container>
-     // </div>
     )
   }
 }
@@ -154,9 +153,10 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = ({
-  data
+  data,user
 }) => ({
-  data
+  data,
+  user
 });
 
 export default connect(
